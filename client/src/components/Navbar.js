@@ -90,9 +90,9 @@ const Navbar = () => {
             mr={1}
             color={theme.palette.primary.main}
           >
-            {/* <Link to="/" color="inherit"> */}
-              PostIt
-            {/* </Link> */}
+            <Link to="/" color="inherit">
+              Infant Spielberg
+            </Link>
           </Typography>
         </HorizontalStack>
 

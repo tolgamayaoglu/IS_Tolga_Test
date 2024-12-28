@@ -20,7 +20,6 @@ import HorizontalStack from "./util/HorizontalStack";
 
 import {} from "react-icons/ai";
 import ContentUpdateEditor from "./ContentUpdateEditor";
-import Markdown from "./Markdown";
 
 import "./postCard.css";
 import { MdCancel } from "react-icons/md";
@@ -172,7 +171,6 @@ const PostCard = (props) => {
                   overflow="hidden"
                   className="content"
                 >
-                  <Markdown content={post.content} />
                 </Box>
               ))}
 

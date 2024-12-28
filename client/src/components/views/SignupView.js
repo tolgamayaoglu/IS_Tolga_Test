@@ -12,9 +12,7 @@ import React, { useState } from "react";
 import { signup } from "../../api/users";
 import { loginUser } from "../../helpers/authHelper";
 import { useNavigate } from "react-router-dom";
-import Copyright from "../Copyright";
 import ErrorAlert from "../ErrorAlert";
-import { isLength, isEmail, contains } from "validator";
 
 const SignupView = () => {
   const navigate = useNavigate();
@@ -34,9 +32,6 @@ const SignupView = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const errors = validate();
-    if (Object.keys(errors).length !== 0) return;
-
     const data = await signup(formData);
 
     if (data.error) {
@@ -47,43 +42,20 @@ const SignupView = () => {
     }
   };
 
-  const validate = () => {
-    const errors = {};
-
-    if (!isLength(formData.username, { min: 6, max: 30 })) {
-      errors.username = "Must be between 6 and 30 characters long";
-    }
-
-    if (contains(formData.username, " ")) {
-      errors.username = "Must contain only valid characters";
-    }
-
-    if (!isLength(formData.password, { min: 8 })) {
-      errors.password = "Must be at least 8 characters long";
-    }
-
-    if (!isEmail(formData.email)) {
-      errors.email = "Must be a valid email address";
-    }
-
-    setErrors(errors);
-
-    return errors;
-  };
 
   return (
     <Container maxWidth={"xs"} sx={{ mt: { xs: 2, md: 6 } }}>
       <Stack alignItems="center">
         <Typography variant="h2" color="text.secondary" sx={{ mb: 6 }}>
           <Link to="/" color="inherit" underline="none">
-            PostIt
+            Infant Spielberg
           </Link>
         </Typography>
         <Typography variant="h5" gutterBottom>
           Sign Up
         </Typography>
         <Typography color="text.secondary">
-          Already have an account? <Link to="/login">Login</Link>
+          Login <Link to="/login">Login</Link>
         </Typography>
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
@@ -127,9 +99,6 @@ const SignupView = () => {
           <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
             Sign Up
           </Button>
-        </Box>
-        <Box sx={{ mt: 3 }}>
-          <Copyright />
         </Box>
       </Stack>
     </Container>

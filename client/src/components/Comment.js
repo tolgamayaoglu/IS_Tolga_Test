@@ -9,7 +9,6 @@ import ContentDetails from "./ContentDetails";
 import HorizontalStack from "./util/HorizontalStack";
 import { deleteComment, updateComment } from "../api/posts";
 import ContentUpdateEditor from "./ContentUpdateEditor";
-import Markdown from "./Markdown";
 import { MdCancel } from "react-icons/md";
 import { BiReply, BiTrash } from "react-icons/bi";
 import { BsReply, BsReplyFill } from "react-icons/bs";
@@ -152,14 +151,6 @@ const Comment = (props) => {
 
         {!minimised && (
           <Box sx={{ mt: 1 }} overflow="hidden">
-            {!editing ? (
-              <Markdown content={comment.content} />
-            ) : (
-              <ContentUpdateEditor
-                handleSubmit={handleSubmit}
-                originalContent={comment.content}
-              />
-            )}
 
             {replying && !minimised && (
               <Box sx={{ mt: 2 }}>

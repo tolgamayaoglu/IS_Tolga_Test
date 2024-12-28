@@ -7,11 +7,8 @@ import CommentBrowser from "../CommentBrowser";
 
 import ErrorAlert from "../ErrorAlert";
 import FindUsers from "../FindUsers";
-import Footer from "../Footer";
-import GoBack from "../GoBack";
 import GridLayout from "../GridLayout";
 import Loading from "../Loading";
-import MobileProfile from "../MobileProfile";
 import Navbar from "../Navbar";
 import PostBrowser from "../PostBrowser";
 import Profile from "../Profile";
@@ -100,14 +97,6 @@ const ProfileView = () => {
       <GridLayout
         left={
           <>
-            <MobileProfile
-              profile={profile}
-              editing={editing}
-              handleSubmit={handleSubmit}
-              handleEditing={handleEditing}
-              handleMessage={handleMessage}
-              validate={validate}
-            />
             <Stack spacing={2}>
               {profile ? (
                 <>
@@ -134,7 +123,6 @@ const ProfileView = () => {
             />
 
             <FindUsers />
-            <Footer />
           </Stack>
         }
       />

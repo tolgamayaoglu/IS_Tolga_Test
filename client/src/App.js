@@ -29,6 +29,9 @@ import { initiateSocketConnection, socket } from "./helpers/socketHelper";
 import { useEffect } from "react";
 import { BASE_URL } from "./config";
 import { io } from "socket.io-client";
+import React from 'react';
+import CreateVideoPage from './components/views/CreateVideoPage';
+import GenerateVideoPage from './components/views/GenerateVideoPage';
 
 function App() {
   initiateSocketConnection();
@@ -48,6 +51,10 @@ function App() {
               </PrivateRoute>
             }
           />
+
+<Route path="/videos/create" element={<CreateVideoPage />} />
+<Route path="/generate-video" element={<GenerateVideoPage />} />
+
           <Route
             path="/messenger"
             element={

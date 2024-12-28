@@ -14,7 +14,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../api/users";
 import ErrorAlert from "../ErrorAlert";
 import { loginUser } from "../../helpers/authHelper";
-import Copyright from "../Copyright";
 
 const LoginView = () => {
   const navigate = useNavigate();
@@ -47,14 +46,14 @@ const LoginView = () => {
       <Stack alignItems="center">
         <Typography variant="h2" color="text.secondary" sx={{ mb: 6 }}>
           <Link to="/" color="inherit" underline="none">
-            PostIt
+            Infant Spielberg
           </Link>
         </Typography>
         <Typography variant="h5" gutterBottom>
           Login
         </Typography>
         <Typography color="text.secondary">
-          Don't have an account yet? <Link to="/signup">Sign Up</Link>
+          Register <Link to="/signup">Sign Up</Link>
         </Typography>
         <Box component="form" onSubmit={handleSubmit}>
           <TextField
@@ -83,9 +82,6 @@ const LoginView = () => {
           <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
             Login
           </Button>
-        </Box>
-        <Box sx={{ mt: 3 }}>
-          <Copyright />
         </Box>
       </Stack>
     </Container>
